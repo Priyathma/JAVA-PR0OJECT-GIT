@@ -19,13 +19,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             /* Style the body */
             body {
               font-family: Arial, Helvetica, sans-serif;
+              background: #f1f1f1;
               margin: 0;
             }
 
             
             /* Header/logo Title */
             .header {
-              padding: 80px;
+              padding: 10px;
               text-align: center;
               background: #009900;
               color: white;
@@ -178,6 +179,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             padding: 35px;   
             background-color: white;  
           }
+          
+          .container {
+            width: 40%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+    }
+          
+          .section{
+              margin-bottom: 20px;
+          }
+          
+          .order-list{
+              list-style-type: none;
+              padding: 0;
+          }
+          
+          .order-item{
+              border: 1px solid #ddd;
+              margin: 10px 0;
+              padding: 10px;
+              border-radius: 4px;
+              background-color: #f9f9f9;
+          }
+          
+          .order-item h2{
+              color: #333;
+          }
+          
+          .order-item p{
+              margin: 0;
+              color: #777;
+          }
+          
+         
+          
+          
         </style>     
         
         
@@ -193,19 +235,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <!-- navbar code -->
         <div class="navbar">
             <a href="home.html">HOME</a>
-            <a href="#">CATEGORY</a>
             <a href="history.html">HISTORY</a>
             <a href="aboutus.html">ABOUT US</a>
-            <a href="settings.html" class="right"><img src="settings.png" width="20" height="20"</a>
-            <a href="index.html" class="right">LOGIN</a>
+            <a href="setting.html" class="right"><img src="settings.png" width="20" height="20"</a>
             <a href="register.html" class="right">REGISTER</a>
+            <a href="index.html" class="right">LOGIN</a>
+            <a href="cart.html" class="right"><img src="cart.png" width="20" height="20"></a>
+            
         </div>
-        
-        
-        
-        
-        
-         <center> <h2> HISTORY </h2> </center> 
+      
+         
+         <section class="history.html" id="HISTORY">
+             <center> <h1 class="heading">MY<span> ORDERS</span></h1></Center>
+         
+         <div class="container">
+             <section class="section">
+                 <center> <h2>To Pay</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <h3> Order #003</h3>
+                         <p>Product : Mango</p>
+                         <p>Quantity : 3</p>
+                         <p>Total : Rs150/=</p>
+                         <button>Pay Now</button>
+                     </li>
+                 </ul>
+             </section>
+             
+             <section class="section">
+                 <center> <h2>Track Order</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <h3>Order #004</h3>
+                         <p>Product : Apple</p>
+                         <p>Quantity : 1</p>
+                         <p>Status : Shipped</p>
+                         <button>Pay Now</button>
+                     </li>
+                 </ul>
+             </section>
+         </div>
         
         <!--footer code -->
         <div class="footer">
