@@ -1,0 +1,454 @@
+<%-- 
+    Document   : admin
+    Created on : Dec 26, 2023, 7:58:02 PM
+    Author     : priya
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title>Home | Green Supermarket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <style>
+            
+             *{
+              box-sizing: border-box;
+              --orange: #ff7800
+              --black: #130f40;
+              --light-color: #666;
+              --box-shadow: 10 .5rem 1.5rem var(--box-shadow);
+              --border: .2rem solid rgba(0,0,0,.1);
+              --outline: .1rem solid rgba(0,0,0,.1);
+              --outline-hover: .2rem solid var(--black);
+                 
+            }
+
+            
+            /* Style the body */
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              background: #f1f1f1;
+              margin: 0;
+            }
+
+            
+            /* Header/logo Title */
+            .header {
+              padding: 10px;
+              text-align: center;
+              background: #009900;
+              color: white;
+            }
+
+            
+            /* Increase the font size of the heading */
+            .header h1 {
+              font-size: 80px;
+            }
+
+            
+            /* Style the top navigation bar */
+            .navbar {
+              overflow: hidden;
+              background-color: #006600;
+            }
+
+            
+            /* Style the navigation bar links */
+            .navbar a {
+              float: left;
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 25px 20px;
+              text-decoration: none;
+            }
+
+            
+            /* Right-aligned link */
+            .navbar a.right {
+              float: right;
+            }
+
+            
+            /* Change color on hover */
+            .navbar a:hover {
+              background-color: white;
+              color: black;
+            }
+
+            
+            /* Column container */
+            .row {  
+              display: -ms-flexbox; /* IE10 */
+              display: flex;
+              -ms-flex-wrap: wrap; /* IE10 */
+              flex-wrap: wrap;
+            }
+
+            
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+              -ms-flex: 30%; /* IE10 */
+              flex: 30%;
+              background-color: #f1f1f1;
+              padding: 20px;
+            }
+
+            
+            /* Main column */
+            .main {   
+              -ms-flex: 70%; /* IE10 */
+              flex: 70%;
+              background-color: white;
+              padding: 20px;
+            }
+
+            
+            /* Fake image, just for this example */
+            .fakeimg {
+              background-color: #aaa;
+              width: 100%;
+              padding: 20px;
+            }
+
+            
+            /* Footer */
+            .footer {
+              padding: 20px;
+              text-align: center;
+              background: black;
+            }
+
+            .footer h2,a {
+              color: white;
+            }
+            
+            .section{
+             padding:2rem.9%; 
+          }
+            
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+              .row {   
+                flex-direction: column;
+              }
+            }
+
+            
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+              .navbar a {
+                float: none;
+                width: 100%;
+              }
+            }
+            
+            
+            
+            
+            button {   
+            background-color: #009900;   
+            width: 100%;  
+            color: white;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+          }   
+          
+          
+            form { 
+            width: 90%; 
+            border: 1px solid #f1f1f1;   
+          }   
+          
+          
+            input[type=text], input[type=password] {   
+            width: 100%;   
+            margin: 8px 0;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid green;   
+            box-sizing: border-box;   
+          }  
+          
+          
+            button:hover {   
+            opacity: 0.7;   
+          }   
+          
+          
+            .cancelbtn {   
+            width: auto;   
+            padding: 10px 18px;  
+            margin: 10px 5px;  
+          }   
+        
+     
+            .container {   
+            padding: 35px;   
+            background-color: white;  
+          }
+          
+            .shop-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #009900;
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+           }
+
+            .shop-now-button:hover {
+            background-color: #2980b9;
+           }
+           
+            .home{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(../images/banner-bg.webp) no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 15px;
+            padding-bottom: 10px;
+           }
+           
+            .heading{
+              text-align: center;
+              padding: 0rem 0;
+              padding-bottom: 3rem;
+              font-size: 3.5rem;
+              color: var(--black);
+           }
+           
+            .heading span{
+              padding: 1rem 1rem;
+             
+           }
+           
+            .features .box-container{
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(10rem, 5fr));
+              gap: 1.5rem;
+           }
+           
+            .features .box-container .box{
+              padding: 3rem 3rem;
+              background: #fff;
+              outline: var(--outline);
+              outline-offset: -1rem;
+              text-align: center;
+           }
+           
+            .features .box-container .box:hover{
+              outline: var(--outline-hover);
+              outline-offset: 3rem;
+           }
+           
+            .features .box-container .box img{
+              margin: 1rem 0;
+              height: 10rem;
+           }
+           
+            .features .box-container .box h3{
+              font-size: 2.5rem;
+              line-height: 1.8rem;
+              color: var(--black);
+           }
+           
+            .features .box-container .box p{
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+              color: var(--light-color);
+              padding: 1rem 0;
+           }
+           
+            .container {
+              width: 40%;
+              max-width: 1200px;
+              margin: 20px auto;
+              background-color: #fff;
+              padding: 20px;
+              box-sizing: border-box;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+           }
+           
+            .section{
+              margin-bottom: 20px;
+           }
+          
+            .order-list{
+              list-style-type: none;
+              padding: 0;
+           }
+          
+            .order-item{
+              border: 1px solid #ddd;
+              margin: 10px 0;
+              padding: 10px;
+              border-radius: 4px;
+              background-color: #f9f9f9;
+           }
+          
+            .order-item h2{
+              color: #333;
+           }
+          
+            .order-item p{
+              margin: 0;
+              color: #777;
+           }
+     
+     
+            .aboutus .box-container{
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(10rem, 0.5fr));
+              gap: 1.5rem;
+           }
+           
+           
+            .aboutus .box-container .box{
+              padding: 1rem 1rem;
+              background: #fff;
+              text-align: center;
+           }
+           
+            .aboutus .box-container .box:hover{
+              outline: var(--outline-hover);
+              outline-offset: 3rem;
+           }
+           
+            .aboutus .box-container .box img{
+              margin: 1rem 0;
+              height: 10rem;
+           }
+           
+            .aboutus .box-container .box h3{
+              font-size: 2.5rem;
+              line-height: 1.8rem;
+              color: var(--black);
+           }
+           
+            .aboutus .box-container .box p{
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+              color: var(--light-color);
+              padding: 1rem 0;
+           }
+           
+            .searchbox{
+              float: right;
+              height: 50px;
+              width: 30%;
+              display: flex;
+              cursor: pointer;
+              padding: 10px 20px;
+              background: #FFFFFF;
+              border-radius: 20px;
+              align-items: center;
+              box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3); 
+           }
+           
+            .searchbox:hover input{
+              width: 400px;
+           }
+           
+            .searchbox input{
+              outline: none;
+              border: none;
+           }
+           
+ 
+           
+
+
+         
+           
+          
+        
+          
+        </style>  
+        
+        
+    </head>
+    <body>
+        
+        <!-- header code -->
+        <div class="header">
+            <h1>GREEN SUPERMARKET</h1>
+            <p>JAVA PROJECT G23</p>
+        </div>
+        
+        <!-- navbar code -->
+        <div class="navbar">
+            <a href="">WELCOME TO THE ADMIN PANEL</a>
+            <a href="home.html" class="right">EXIT</a>
+        </div><br>
+   
+        <center> <h2> ADMIN PANEL </h2> </center> 
+        
+        
+        <!-- Home section starts -->
+         <section class="home.html" id="HOME">
+            
+         </section>
+        <center>
+        
+        
+        
+            <div class="container">
+             <section class="section">
+                 <center> <h2>ADD PRODUCTS</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <img src="add.png" width="50" height="50">
+                         <form>
+                             <input type="text" placeholder="Enter Product Name" name="name" required>
+                             <input type="text" placeholder="Enter Product Id" name="id" required>
+                             <input type="text" placeholder="Enter Product Details" name="details" required>
+                             <input type="text" placeholder="Enter Product Price" name="price" required>
+                         </form>
+                        
+                         <button>ADD</button>
+                     </li>
+                 </ul>
+             </section>
+             
+             <section class="section">
+                 <center> <h2>REMOVE PRODUCTS</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <img src="delete.png" width="50" height="50">
+                         <form>
+                             <input type="text" placeholder="Enter Product Id" name="id" required>
+                         </form>
+                         <button>DELETE</button>
+                     </li>
+                 </ul>
+             </section>
+             
+         </div>
+         
+
+         
+         
+        <!--footer code -->
+        <div class="footer">
+          <h2>FOOTER</h2>
+          <a href="contactus.html">CONTACT US</a>
+        </div>        
+    </body>
+</html>
