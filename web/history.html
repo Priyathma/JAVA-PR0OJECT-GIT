@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>History | Green Supermarket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <style>
+            
+            * {
+              box-sizing: border-box;
+            }
+
+            
+            /* Style the body */
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              background: #f1f1f1;
+              margin: 0;
+            }
+
+            
+            /* Header/logo Title */
+            .header {
+              padding: 10px;
+              text-align: center;
+              background: #009900;
+              color: white;
+            }
+
+            
+            /* Increase the font size of the heading */
+            .header h1 {
+              font-size: 80px;
+            }
+
+            
+            /* Style the top navigation bar */
+            .navbar {
+              overflow: hidden;
+              background-color: #006600;
+            }
+
+            
+            /* Style the navigation bar links */
+            .navbar a {
+              float: left;
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 25px 20px;
+              text-decoration: none;
+            }
+
+            
+            /* Right-aligned link */
+            .navbar a.right {
+              float: right;
+            }
+
+            
+            /* Change color on hover */
+            .navbar a:hover {
+              background-color: white;
+              color: black;
+            }
+
+            
+            /* Column container */
+            .row {  
+              display: -ms-flexbox; /* IE10 */
+              display: flex;
+              -ms-flex-wrap: wrap; /* IE10 */
+              flex-wrap: wrap;
+            }
+
+            
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+              -ms-flex: 30%; /* IE10 */
+              flex: 30%;
+              background-color: #f1f1f1;
+              padding: 20px;
+            }
+
+            
+            /* Main column */
+            .main {   
+              -ms-flex: 70%; /* IE10 */
+              flex: 70%;
+              background-color: white;
+              padding: 20px;
+            }
+
+            
+            /* Fake image, just for this example */
+            .fakeimg {
+              background-color: #aaa;
+              width: 100%;
+              padding: 20px;
+            }
+
+            
+            /* Footer */
+            .footer {
+              padding: 20px;
+              text-align: center;
+              background: black;
+            }
+
+            .footer h2,a {
+              color: white;
+            }
+            
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+              .row {   
+                flex-direction: column;
+              }
+            }
+
+            
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+              .navbar a {
+                float: none;
+                width: 100%;
+              }
+            }
+            
+            
+            
+            
+            button {   
+            background-color: #009900;   
+            width: 100%;  
+            color: white;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+          }   
+          
+          
+            form { 
+            width: 20%; 
+            border: 1px solid #f1f1f1;   
+          }   
+          
+          
+            input[type=text], input[type=password] {   
+            width: 100%;   
+            margin: 8px 0;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid green;   
+            box-sizing: border-box;   
+          }  
+          
+          
+            button:hover {   
+            opacity: 0.7;   
+          }   
+          
+          
+            .cancelbtn {   
+            width: auto;   
+            padding: 10px 18px;  
+            margin: 10px 5px;  
+          }   
+        
+     
+            .container {   
+            padding: 35px;   
+            background-color: white;  
+          }
+          
+          .container {
+            width: 40%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+    }
+          
+          .section{
+              margin-bottom: 20px;
+          }
+          
+          .order-list{
+              list-style-type: none;
+              padding: 0;
+          }
+          
+          .order-item{
+              border: 1px solid #ddd;
+              margin: 10px 0;
+              padding: 10px;
+              border-radius: 4px;
+              background-color: #f9f9f9;
+          }
+          
+          .order-item h2{
+              color: #333;
+          }
+          
+          .order-item p{
+              margin: 0;
+              color: #777;
+          }
+          
+         
+          
+          
+        </style>     
+        
+        
+    </head>
+    <body>
+        
+        <!-- header code -->
+        <div class="header">
+            <h1>GREEN SUPERMARKET</h1>
+            <p>JAVA PROJECT G23</p>
+        </div>
+        
+        <!-- navbar code -->
+        <div class="navbar">
+            <a href="home.html">HOME</a>
+            <a href="history.html">HISTORY</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="setting.html" class="right"><img src="settings.png" width="20" height="20"</a>
+            <a href="register.html" class="right">REGISTER</a>
+            <a href="index.html" class="right">LOGIN</a>
+            <a href="cart.html" class="right"><img src="cart.png" width="20" height="20"></a>
+            
+        </div>
+      
+         
+         <section class="history.html" id="HISTORY">
+             <center> <h1 class="heading">MY<span> ORDERS</span></h1></Center>
+         
+         <div class="container">
+             <section class="section">
+                 <center> <h2>To Pay</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <h3> Order #003</h3>
+                         <p>Product : Mango</p>
+                         <p>Quantity : 3</p>
+                         <p>Total : Rs150/=</p>
+                         <button>Pay Now</button>
+                     </li>
+                 </ul>
+             </section>
+             
+             <section class="section">
+                 <center> <h2>Track Order</h2></center>
+                 <ul class="order-list">
+                     <li class="order-item">
+                         <h3>Order #004</h3>
+                         <p>Product : Apple</p>
+                         <p>Quantity : 1</p>
+                         <p>Status : Shipped</p>
+                         <button>Pay Now</button>
+                     </li>
+                 </ul>
+             </section>
+         </div>
+        
+        <!--footer code -->
+        <div class="footer">
+          <h2>FOOTER</h2>
+          <a href="contactus.html">CONTACT US</a>
+        </div>        
+    </body>
+</html>

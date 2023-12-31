@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title>Home | Green Supermarket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <style>
+            
+             *{
+              box-sizing: border-box;
+              --orange: #ff7800
+              --black: #130f40;
+              --light-color: #666;
+              --box-shadow: 10 .5rem 1.5rem var(--box-shadow);
+              --border: .2rem solid rgba(0,0,0,.1);
+              --outline: .1rem solid rgba(0,0,0,.1);
+              --outline-hover: .2rem solid var(--black);
+                 
+            }
+
+            
+            /* Style the body */
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              background: #f1f1f1;
+              margin: 0;
+            }
+
+            
+            /* Header/logo Title */
+            .header {
+              padding: 10px;
+              text-align: center;
+              background: #009900;
+              color: white;
+            }
+
+            
+            /* Increase the font size of the heading */
+            .header h1 {
+              font-size: 80px;
+            }
+
+            
+            /* Style the top navigation bar */
+            .navbar {
+              overflow: hidden;
+              background-color: #006600;
+            }
+
+            
+            /* Style the navigation bar links */
+            .navbar a {
+              float: left;
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 25px 20px;
+              text-decoration: none;
+            }
+
+            
+            /* Right-aligned link */
+            .navbar a.right {
+              float: right;
+            }
+
+            
+            /* Change color on hover */
+            .navbar a:hover {
+              background-color: white;
+              color: black;
+            }
+
+            
+            /* Column container */
+            .row {  
+              display: -ms-flexbox; /* IE10 */
+              display: flex;
+              -ms-flex-wrap: wrap; /* IE10 */
+              flex-wrap: wrap;
+            }
+
+            
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+              -ms-flex: 30%; /* IE10 */
+              flex: 30%;
+              background-color: #f1f1f1;
+              padding: 20px;
+            }
+
+            
+            /* Main column */
+            .main {   
+              -ms-flex: 70%; /* IE10 */
+              flex: 70%;
+              background-color: white;
+              padding: 20px;
+            }
+
+            
+            /* Fake image, just for this example */
+            .fakeimg {
+              background-color: #aaa;
+              width: 100%;
+              padding: 20px;
+            }
+
+            
+            /* Footer */
+            .footer {
+              padding: 20px;
+              text-align: center;
+              background: black;
+            }
+
+            .footer h2,a {
+              color: white;
+            }
+            
+            .section{
+             padding:2rem.9%; 
+          }
+            
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+              .row {   
+                flex-direction: column;
+              }
+            }
+
+            
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+              .navbar a {
+                float: none;
+                width: 100%;
+              }
+            }
+            
+            
+            
+            
+            button {   
+            background-color: #009900;   
+            width: 100%;  
+            color: white;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+          }   
+          
+          
+            form { 
+            width: 20%; 
+            border: 1px solid #f1f1f1;   
+          }   
+          
+          
+            input[type=text], input[type=password] {   
+            width: 100%;   
+            margin: 8px 0;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid green;   
+            box-sizing: border-box;   
+          }  
+          
+          
+            button:hover {   
+            opacity: 0.7;   
+          }   
+          
+          
+            .cancelbtn {   
+            width: auto;   
+            padding: 10px 18px;  
+            margin: 10px 5px;  
+          }   
+        
+     
+            .container {   
+            padding: 35px;   
+            background-color: white;  
+          }
+          
+            .shop-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #009900;
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+           }
+
+            .shop-now-button:hover {
+            background-color: #2980b9;
+           }
+           
+            .home{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(../images/banner-bg.webp) no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 15px;
+            padding-bottom: 10px;
+           }
+           
+            .heading{
+              text-align: center;
+              padding: 0rem 0;
+              padding-bottom: 3rem;
+              font-size: 3.5rem;
+              color: var(--black);
+           }
+           
+            .heading span{
+              padding: 1rem 1rem;
+             
+           }
+           
+            .features .box-container{
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(10rem, 5fr));
+              gap: 1.5rem;
+           }
+           
+            .features .box-container .box{
+              padding: 3rem 3rem;
+              background: #fff;
+              outline: var(--outline);
+              outline-offset: -1rem;
+              text-align: center;
+           }
+           
+            .features .box-container .box:hover{
+              outline: var(--outline-hover);
+              outline-offset: 3rem;
+           }
+           
+            .features .box-container .box img{
+              margin: 1rem 0;
+              height: 10rem;
+           }
+           
+            .features .box-container .box h3{
+              font-size: 2.5rem;
+              line-height: 1.8rem;
+              color: var(--black);
+           }
+           
+            .features .box-container .box p{
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+              color: var(--light-color);
+              padding: 1rem 0;
+           }
+           
+            .container {
+              width: 40%;
+              max-width: 1200px;
+              margin: 20px auto;
+              background-color: #fff;
+              padding: 20px;
+              box-sizing: border-box;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+           }
+           
+            .section{
+              margin-bottom: 20px;
+           }
+          
+            .order-list{
+              list-style-type: none;
+              padding: 0;
+           }
+          
+            .order-item{
+              border: 1px solid #ddd;
+              margin: 10px 0;
+              padding: 10px;
+              border-radius: 4px;
+              background-color: #f9f9f9;
+           }
+          
+            .order-item h2{
+              color: #333;
+           }
+          
+            .order-item p{
+              margin: 0;
+              color: #777;
+           }
+     
+     
+            .aboutus .box-container{
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(10rem, 0.5fr));
+              gap: 1.5rem;
+           }
+           
+           
+            .aboutus .box-container .box{
+              padding: 1rem 1rem;
+              background: #fff;
+              text-align: center;
+           }
+           
+            .aboutus .box-container .box:hover{
+              outline: var(--outline-hover);
+              outline-offset: 3rem;
+           }
+           
+            .aboutus .box-container .box img{
+              margin: 1rem 0;
+              height: 10rem;
+           }
+           
+            .aboutus .box-container .box h3{
+              font-size: 2.5rem;
+              line-height: 1.8rem;
+              color: var(--black);
+           }
+           
+            .aboutus .box-container .box p{
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+              color: var(--light-color);
+              padding: 1rem 0;
+           }
+           
+            .searchbox{
+              float: right;
+              height: 50px;
+              width: 30%;
+              display: flex;
+              cursor: pointer;
+              padding: 10px 20px;
+              background: #FFFFFF;
+              border-radius: 20px;
+              align-items: center;
+              box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3); 
+           }
+           
+            .searchbox:hover input{
+              width: 400px;
+           }
+           
+            .searchbox input{
+              outline: none;
+              border: none;
+           }
+           
+        
+            .container{
+             display: flex;
+             width: 70%;
+             margin-bottom: 30px;
+           }
+            #root{
+             width: 60%;
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             grid-gap: 20px;
+           }
+            .sidebar{
+             width: 40%;
+             border-radius: 5px;
+             background-color: #eee;
+             margin-left: 20px;
+             padding: 15px;
+             text-align: center;
+           }
+           
+            .head{
+             background-color: #009900;
+             border-radius: 3px;
+             height: 40px;
+             padding: 10px;
+             margin-bottom: 20px;
+             color: white;
+             display: flex;
+             align-items: center;
+           }
+           
+            .foot{
+             display: flex;
+             justify-content: space-between;
+             margin: 20px 0px;
+             padding: 10px 0px;
+             border-top: 1px solid #333;
+           }
+           
+            .box{
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: space-between;
+             border: 1px solid goldenrod;
+             border-radius: 5px;
+             padding: 15px;
+           }
+           
+            .img-box{
+             width: 100%;
+             height: 180px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+           }
+           
+            .images{
+             max-width: 90%;
+             max-height: 90%;
+             object-fit: cover;
+             object-position: center;
+           }
+           
+            .bottom{
+             margin-top: 20px;
+             width: 100%;
+             text-align: center;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: space-between;
+             height: 110px;
+           }
+           
+            h2{
+            font-size: 20px;
+            color: red;
+            }
+            
+            button{
+            width: 100%;
+            position: relative;
+            border: none;
+            border-radius: 5px;
+            background-color: #009900;
+            padding: 7px 25px;
+            cursor: pointer;
+            color: white;
+            }
+            
+            button:hover{
+            background-color: #333;
+            }
+            
+            .cart-item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: white;
+            border-bottom: 1px solid #aaa;
+            border-radius: 3px;
+            margin: 10px 10px;
+            }
+            
+            .row-img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #009900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            
+            .rowimg{
+             max-width: 43px;
+             max-height: 43px;
+             border-radius: 50%;
+            }
+            
+            .fa-trash:hover{
+            cursor: pointer;
+            color: #333;
+            }
+
+           
+
+
+         
+           
+          
+            
+            
+            
+        .cart-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .cart-items {
+            width: 60%;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .cart-total {
+            width: 30%;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .cart-total h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cart-total h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .remove-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background-color: #c9302c;
+        }
+          
+        </style>  
+        
+        
+    </head>
+    <body>
+        
+        <!-- header code -->
+        <div class="header">
+            <h1>GREEN SUPERMARKET</h1>
+            <p>JAVA PROJECT G23</p>
+        </div>
+        
+        <!-- navbar code -->
+        <div class="navbar">
+            <a href="home.html">HOME</a>
+            <a href="ctgry.html">CATEGORY</a>
+            <a href="history.html">HISTORY</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="setting.html" class="right"><img src="settings.png" width="20" height="20"></a>
+            <a href="register.html" class="right">REGISTER</a>
+            <a href="index.html" class="right">LOGIN</a>
+            <a href="cart.html" class="right"><img src="cart.png" width="20" height="20"></a>
+        </div><br>
+   
+        <center> <h1> CART </h1> </center> 
+        
+       
+        <!-- Home section starts -->
+         <section class="home.html" id="HOME">
+            
+         </section>
+         
+
+        <div class="container">
+            <div id="root"></div>
+            <div class="sidebar">
+                <div class="head"><p>MY CART</p></div>
+                <div id="cartItem">Your cart is empty</div>
+                <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">$ 0.00</h2>
+                </div>
+            </div>
+        </div>
+         
+         
+        <!--footer code -->
+        <div class="footer">
+          <h2>FOOTER</h2>
+          <a href="contactus.html">CONTACT US</a>
+        </div> 
+         <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve the cart from local storage
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Display the cart items
+            var root = document.getElementById('root');
+            var totalElement = document.getElementById('total');
+
+            if (cart.length > 0) {
+                // Loop through the cart items and display them
+                var total = 0;
+                cart.forEach(item => {
+                    // Assuming you have product details available
+                    var product = getProductDetailsById(item.productId);
+
+                    total += item.quantity * product.price;
+
+                    var cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+
+                    var productImage = document.createElement('img');
+                    productImage.src = product.image;
+                    productImage.alt = product.name;
+
+                    var itemName = document.createElement('div');
+                    itemName.textContent = product.name;
+
+                    var itemQuantity = document.createElement('div');
+                    itemQuantity.textContent = `Quantity: ${item.quantity}`;
+
+                    var removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-btn';
+                    removeBtn.textContent = 'Remove';
+                    removeBtn.onclick = function () {
+                        removeFromCart(item.productId);
+                        location.reload(); // Refresh the page after removal
+                    };
+
+                    cartItem.appendChild(productImage);
+                    cartItem.appendChild(itemName);
+                    cartItem.appendChild(itemQuantity);
+                    cartItem.appendChild(removeBtn);
+
+                    root.appendChild(cartItem);
+                });
+
+                totalElement.textContent = `$${total.toFixed(2)}`;
+            }
+        });
+
+        function getProductDetailsById(productId) {
+            // You need to implement this function based on your data structure
+            // It should return an object with product details (name, price, image, etc.)
+            // Replace this example with your actual implementation
+            return {
+                name: "Product Name",
+                price: 10.00,
+                image: "product.jpg"
+            };
+        }
+
+        function removeFromCart(productId) {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var updatedCart = cart.filter(item => item.productId !== productId);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+        }
+    </script>
+    </body>
+</html>
