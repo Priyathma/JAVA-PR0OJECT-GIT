@@ -5,14 +5,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
         <title>Home | Green Supermarket</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
             <style>
             
-            * {
+             *{
               box-sizing: border-box;
+              --orange: #ff7800
+              --black: #130f40;
+              --light-color: #666;
+              --box-shadow: 10 .5rem 1.5rem var(--box-shadow);
+              --border: .2rem solid rgba(0,0,0,.1);
+              --outline: .1rem solid rgba(0,0,0,.1);
+              --outline-hover: .2rem solid var(--black);
+                 
             }
 
             
@@ -26,7 +36,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             
             /* Header/logo Title */
             .header {
-              padding: 80px;
+              padding: 10px;
               text-align: center;
               background: #009900;
               color: white;
@@ -117,6 +127,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
               color: white;
             }
             
+            .section{
+             padding:2rem.9%; 
+          }
+            
             /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
             @media screen and (max-width: 700px) {
               .row {   
@@ -179,9 +193,180 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             padding: 35px;   
             background-color: white;  
           }
+          
+            .shop-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #009900;
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+           }
+
+            .shop-now-button:hover {
+            background-color: #2980b9;
+           }
+           
+            .home{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(../images/banner-bg.webp) no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 15px;
+            padding-bottom: 10px;
+           }
+           
+            .heading{
+              text-align: center;
+              padding: 0rem 0;
+              padding-bottom: 3rem;
+              font-size: 3.5rem;
+              color: var(--black);
+           }
+           
+            .heading span{
+              padding: 1rem 1rem;
+             
+           }
+           
+             .container {   
+            padding: 35px;   
+            background-color: white;  
+          }
+          
+            .shop-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #009900;
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+           }
+
+            .shop-now-button:hover {
+            background-color: #2980b9;
+           }
+          
+           
+             .heading{
+               text-align: center;
+               padding: 0rem 0;
+               padding-bottom: 3rem;
+               font-size: 3.5rem;
+               color: var(--black);
+           }
+           
+             .heading span{
+               padding: 1rem 1rem;
+             
+           }
+           
+             .category  .box-container{
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(10rem, 5fr));
+               gap: 1.5rem;
+           }
+           
+             .category  .box-container .box{
+               padding: 3rem 3rem;
+               background: #fff;
+               outline: var(--outline);
+               outline-offset: -1rem;
+               text-align: center;
+           }
+           
+             .category  .box-container .box:hover{
+               outline: var(--outline-hover);
+               outline-offset: 3rem;
+           }
+           
+             .category  .box-container .box img{
+               margin: 1rem 0;
+               height: 8rem;
+           }
+           
+             .category  .box-container .box h3{
+               font-size: 2rem;
+               line-height: 2rem;
+               color: var(--black);
+           }
+           
+             .category .box-container .box p{
+               font-size: 1rem;
+               line-height: 1.8rem;
+               color: var(--light-color);
+               padding: 1rem 0;
+           }
+           
+            .searchbox{
+              float: right;
+              height: 50px;
+              width: 30%;
+              display: flex;
+              cursor: pointer;
+              padding: 10px 20px;
+              background: #FFFFFF;
+              border-radius: 20px;
+              align-items: center;
+              box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3); 
+           }
+           
+            .searchbox:hover input{
+              width: 400px;
+           }
+           
+            .searchbox input{
+              outline: none;
+              border: none;
+           }
+           
+ 
+           
+
+
+             /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            display: inline-block;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .add-to-cart-btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+        }
+           
+          
+
+      
         </style>  
-        
-        
+       
     </head>
     <body>
         
@@ -194,20 +379,198 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <!-- navbar code -->
         <div class="navbar">
             <a href="home.html">HOME</a>
-            <a href="#">CATEGORY</a>
+           
             <a href="history.html">HISTORY</a>
             <a href="aboutus.html">ABOUT US</a>
-            <a href="settings.html" class="right"><img src="settings.png" width="20" height="20"</a>
-            <a href="index.html" class="right">LOGIN</a>
+            <a href="setting.html" class="right"><img src="settings.png" width="20" height="20"</a>
             <a href="register.html" class="right">REGISTER</a>
+            <a href="index.html" class="right">LOGIN</a>
+            <a href="cart.html" class="right"><img src="cart.png" width="20" height="20"></a>
+
+        </div><br>
+   
+        <center> <h2> HOME </h2> </center> 
+        
+        <div class="searchbox">
+             <input type="text" placeholder="Search...">
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- Home section starts -->
+         <section class="home.html" id="HOME">
+            
+         </section>
+       <div id="product-container">
+    <!-- Product 1 
+    <div class="product">
+        <img src="apple.jpg" alt="Apple">
+        <p> Apple</p>
+        <p> Fresh and crisp</p>
+        <p> $1.00 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+    </div>
+
+    <!-- Product 2 
+    <div class="product">
+        <img src="banana.jpg" alt="Banana">
+        <p> Banana</p>
+        <p> Ripe and sweet</p>
+        <p> $0.75 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+    </div>
+
+    <!-- Product 3 
+    <div class="product">
+        image:<img src="orange.jpeg" alt="Orange">
+        title:<p> Orange</p>
+        details:<p> Juicy and tangy</p>
+        price:<p> $1.25 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+    </div>
+
+    <!-- Product 4 
+    <div class="product">
+        <img src="grape.jpg" alt="Grape">
+        <p> Grape</p>
+        <p> Sweet and seedless</p>
+        <p> $2.00 per bunch</p>
+        <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+    </div>
+
+    <!-- Product 5 
+    <div class="product">
+        <img src="strawberry.jpg" alt="Strawberry">
+        <p> Strawberry</p>
+        <p> Red and delicious</p>
+        <p> $0.50 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+    </div>
+</div>
         
+        <div id="product-container">
+    <!-- Product 1 
+    <div class="product">
+        <img src="carrot.jpg" alt="Carrot">
+        <p> Carrot</p>
+        <p> Fresh and crunchy</p>
+        <p> $0.80 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Carrot', 0.80, 'carrot.jpg')">Add to Cart</button>
+    </div> -->
+
+    <!-- Product 2 
+    <div class="product">
+        <img src="broccoli.jpg" alt="Broccoli">
+        <p> Broccoli</p>
+        <p> Nutritious and green</p>
+        <p> $1.20 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Broccoli', 1.20, 'broccoli.jpg')">Add to Cart</button>
+    </div>
+
+    <!-- Product 3 
+    <div class="product">
+        <img src="tomato.jpg" alt="Tomato">
+        <p> Tomato</p>
+        <p> Juicy and ripe</p>
+        <p> $0.90 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Tomato', 0.90, 'tomato.jpg')">Add to Cart</button>
+    </div>
+
+    <!-- Product 4
+    <div class="product">
+        <img src="cucumber.jpg" alt="Cucumber">
+        <p> Cucumber</p>
+        <p> Crisp and hydrating</p>
+        <p> $1.00 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Cucumber', 1.00, 'cucumber.jpg')">Add to Cart</button>
+    </div>
+
+    <!-- Product 5 
+    <div class="product">
+        <img src="spinach.jpg" alt="Spinach">
+        <p> Spinach</p>
+        <p> Leafy and rich in iron</p>
+        <p> $1.50 each</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Spinach', 1.50, 'spinach.jpg')">Add to Cart</button>
+    </div>
+</div> -->
+
+
+<script>
+    // JavaScript logic for adding to cart
+    function addToCart(productId) {
+        // Assuming you have a cart array to store selected products
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the product is already in the cart
+        var existingProduct = cart.find(item => item.productId === productId);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            // If not, add it to the cart with a quantity of 1
+            cart.push({ productId: productId, quantity: 1 });
+        }
+
+        // Update the cart in local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Navigate to the cart page
+        //window.location.href = 'cart.html';
+    }
+</script>
+
         
-        
-        
-        
-         <center> <h2> HOME </h2> </center> 
-        
+         <center> <h2> CATEGORY </h2> </center> 
+         
+         <section class="category" id="category">
+            
+             
+         
+             <div class="box-container">
+                 
+                 <div class="box">
+                     <img src="Vegitable.png" alt="">
+                     <h3>Vegitable</h3>
+                     <p> Lorem 2</p>
+                     <a href="vegetable.html" class="shop-now-button">Shop more</a>
+                 </div>
+  
+              
+                 <div class="box">
+                     <img src="Fruits.png" alt="">
+                     <h3>Fresh Fruits</h3>
+                     <p> Lorem 2</p>
+                     <a href="fruits.html" class="shop-now-button">Shop more</a>
+                 </div>
+          
+
+                 <div class="box">
+                     <img src="Dairy Products.png" alt="">
+                     <h3>Dairy  Products</h3>
+                     <p> Lorem 2</p>
+                     <a href="dairy.html" class="shop-now-button">Shop more</a>
+                 </div>
+                 
+                 <div class="box">
+                     <img src="Meat.png" alt="">
+                     <h3>Fresh  Meat</h3>
+                     <p> Lorem 2</p>
+                     <a href="meat.html" class="shop-now-button">Shop more</a>
+                 </div>
+                 
+                 <div class="box">
+                     <img src="Fish.png" alt="">
+                     <h3>Fresh  Fish</h3>
+                     <p> Lorem 2</p>
+                     <a href="fish.html" class="shop-now-button">Shop more</a>
+                 </div>
+             </div>
+         
+
+         
+         
         <!--footer code -->
         <div class="footer">
           <h2>FOOTER</h2>
